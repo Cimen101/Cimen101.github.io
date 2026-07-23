@@ -1,15 +1,15 @@
 {
-  "name": "hexo-blog",
+  "name": "cimen101-blog",
   "version": "1.0.0",
-  "description": "Personal blog built with Hexo",
+  "description": "Cimen101's personal blog built with Hexo and Butterfly theme",
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "generate": "hexo generate"
+    "generate": "node scripts/generate-admin-index.js && hexo generate"
   },
-  "keywords": ["hexo", "blog"],
+  "keywords": ["hexo", "blog", "butterfly", "cimen101"],
   "author": "Cimen101",
   "license": "MIT",
   "dependencies": {
@@ -20,7 +20,14 @@
     "hexo-renderer-stylus": "^3.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
+    "hexo-generator-feed": "^3.0.0",
     "hexo-generator-index": "^3.0.0",
-    "hexo-generator-tag": "^2.0.0"
+    "hexo-generator-sitemap": "^3.0.0",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-abbrlink": "^2.0.0",
+    "hexo-algoliasearch": "^2.0.0",
+    "hexo-butterfly-envelope": "^1.0.0",
+    "hexo-butterfly-tag-plugins-plus": "^1.0.0",
+    "hexo-theme-butterfly": "^5.0.0"
   }
 }
