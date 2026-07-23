@@ -1,0 +1,55 @@
+/* Album Styles */
+.album-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.album-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.album-header h2 {
+  font-size: 2em;
+  background: linear-gradient(135deg, #ff4081, #448aff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.album-masonry .album-item {
+  width: calc(33.333% - 11px);
+  margin-bottom: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.album-masonry .album-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.album-masonry .album-item img {
+  width: 100%;
+  display: block;
+}
+
+.album-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .album-masonry .album-item {
+    width: calc(50% - 8px);
+  }
+}
