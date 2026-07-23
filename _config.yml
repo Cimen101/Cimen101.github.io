@@ -1,33 +1,122 @@
-# Hexo Configuration
-title: My Blog
-subtitle: 'Life and Technology'
-description: 'A personal blog built with Hexo and Butterfly'
-keywords:
+# Hexo Configuration - 进阶版多平台部署
+# Site
+title: Cimen101 Blog
+subtitle: 记录 · 分享 · 创造
+description: 一个基于 Hexo + Butterfly 魔改的现代化个人博客
+keywords: Cimen101,Blog,Hexo,Butterfly,技术分享
 author: Cimen101
 language: zh-CN
 timezone: Asia/Shanghai
 
-url: https://Cimen101.github.io
-permalink: :year/:month/:day/:title/
+# 多平台URL配置
+url: https://cimen101-blog.pages.dev
+root: /
 
+# 永久链接
+permalink: :year/:month/:day/:abbrlink/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+# 目录
 source_dir: source
 public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
 
+# 文章
 new_post_name: :title.md
 default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  line_number: true
+  auto_detect: true
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  preprocess: true
+  line_number: true
+  tab_replace: ''
 
-index_generator:
-  path: ''
-  per_page: 10
-  order_by: -date
+# 分类 & 标签
+default_category: uncategorized
+category_map:
+  tech: 技术
+  life: 生活
+  thoughts: 思考
+  blog: 博客开发
+tag_map:
 
+# 日期格式
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 
+# 分页
 per_page: 10
 pagination_dir: page
-
 theme: butterfly
+
+# 部署 (支持多平台)
+deploy:
+  - type: git
+    repo: https://github.com/Cimen101/Cimen101.github.io.git
+    branch: gh-pages
+    message: 'Site updated: {{ now("YYYY-MM-DD HH:mm:ss") }}'
+
+# 包含文件
+include:
+  - css/custom.css
+  - css/memos.css
+  - css/album.css
+  - js/memos.js
+  - sw.js
+
+# 排除文件
+exclude:
+  - .DS_Store
+  - admin/
+  - admin-panel/
+  - workers/
+
+# 永久链接加密
+abbrlink:
+  alg: crc32
+  rep: hex
+  drafts: false
+
+# 搜索引擎
+meta_generator: true
+
+# Feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+
+# 站点地图
+sitemap:
+  path: sitemap.xml
+  template: ./sitemap-template.xml
+  rel: false
+  tags: true
+  categories: true
