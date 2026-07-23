@@ -1,0 +1,61 @@
+/* PV/UV 统计样式 */
+
+/* 文章页 PV */
+.post-meta-item {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.post-meta-icon {
+  margin-right: 5px;
+  color: #448aff;
+}
+
+.post-meta-text {
+  margin-right: 5px;
+}
+
+.post-meta-number {
+  color: #448aff;
+  font-weight: bold;
+}
+
+/* 站点 PV */
+#site-pv {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  color: #666;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+#site-pv span {
+  margin: 0 5px;
+}
+
+/* 暗色模式 */
+[data-theme="dark"] .post-meta-item {
+  color: #999;
+}
+
+[data-theme="dark"] #site-pv {
+  color: #999;
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .post-meta-item {
+    font-size: 12px;
+    margin-right: 10px;
+  }
+  
+  #site-pv {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+}

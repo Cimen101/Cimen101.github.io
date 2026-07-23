@@ -1,0 +1,421 @@
+# --------------------------------------
+# Butterfly Theme Advanced Configuration
+# 进阶版魔改配置 - 基于 zuanshijia.top 架构分析
+# --------------------------------------
+
+# 站点基础信息
+site:
+  name: Cimen101 Blog
+  subtitle: 记录 · 分享 · 创造
+  description: 一个基于 Hexo + Butterfly 魔改的现代化个人博客
+  keywords: Cimen101,Blog,Hexo,Butterfly,技术分享,生活记录
+  author: Cimen101
+  language: zh-CN
+  timezone: Asia/Shanghai
+  url: https://blog.cimen101.com
+  since: 2024
+
+# --------------------------------------
+# 导航栏配置 (添加魔改功能入口)
+# --------------------------------------
+nav:
+  logo: https://images.cimen101.com/logo.png
+  display_title: true
+  display_post_title: true
+  fixed: true
+
+menu:
+  首页: / || fas fa-home
+  归档: /archives/ || fas fa-archive
+  标签: /tags/ || fas fa-tags
+  分类: /categories/ || fas fa-folder-open
+  短文: /memos/ || fas fa-comment-dots
+  相册: /album/ || fas fa-images
+  音乐: /music/ || fas fa-music
+  关于: /about/ || fas fa-heart
+  管理后台: https://admin.cimen101.com/ || fas fa-cog
+
+# --------------------------------------
+# 代码块魔改 (一键复制、行号、主题切换)
+# --------------------------------------
+code_blocks:
+  theme: mac light
+  macStyle: true
+  height_limit: 400
+  word_wrap: false
+  copy: true
+  language: true
+  shrink: false
+  fullpage: true
+  # 代码高亮主题: github-light / github-dark / dracula / monokai
+  highlight_theme: mac light
+
+# --------------------------------------
+# 社交信息
+# --------------------------------------
+social:
+  fab fa-github: https://github.com/Cimen101 || Github || '#24292e'
+  fas fa-envelope: mailto:contact@cimen101.com || Email || '#4a7dbe'
+  fab fa-twitter: https://twitter.com/Cimen101 || Twitter || '#1da1f2'
+  fab fa-weibo: https://weibo.com/Cimen101 || Weibo || '#e6162d'
+  fab fa-bilibili: https://space.bilibili.com/Cimen101 || Bilibili || '#fb7299'
+
+# --------------------------------------
+# 图床配置 (Cloudflare R2)
+# --------------------------------------
+favicon: https://images.cimen101.com/favicon.ico
+
+avatar:
+  img: https://images.cimen101.com/avatar.png
+  effect: true
+
+# 全站图片CDN前缀
+image_cdn: https://images.cimen101.com
+
+# 头部背景图 (R2图床)
+default_top_img: https://images.cimen101.com/banner/default.jpg
+
+# 禁用某些页面顶部图
+disable_top_img: false
+
+# 背景图
+background: https://images.cimen101.com/background/bg.jpg
+
+# 文章封面
+cover:
+  index_enable: true
+  aside_enable: true
+  archives_enable: true
+  default_cover:
+    - https://images.cimen101.com/cover/1.jpg
+    - https://images.cimen101.com/cover/2.jpg
+    - https://images.cimen101.com/cover/3.jpg
+
+# --------------------------------------
+# 首页配置
+# --------------------------------------
+index_layout: 1
+index_post_content:
+  method: 2
+  length: 200
+
+# 副标题打字机效果
+subtitle:
+  enable: true
+  effect: true
+  source: 1
+  sub:
+    - 愿你出走半生，归来仍是少年
+    - Stay Hungry, Stay Foolish
+    - 代码改变世界，键盘敲响未来
+
+# --------------------------------------
+# 文章设置
+# --------------------------------------
+toc:
+  post: true
+  page: true
+  number: true
+  expand: false
+  style_simple: false
+  scroll_percent: true
+
+# 文章版权
+post_copyright:
+  enable: true
+  decode: true
+  author_href: https://github.com/Cimen101
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# 打赏
+reward:
+  enable: true
+  text: 您的支持是我持续创作的动力
+  QR_code:
+    - img: https://images.cimen101.com/reward/wechat.jpg
+      text: 微信
+    - img: https://images.cimen101.com/reward/alipay.jpg
+      text: 支付宝
+
+# 相关推荐
+related_post:
+  enable: true
+  limit: 6
+  date_type: created
+
+# 文章分页
+post_pagination: 1
+
+# --------------------------------------
+# 魔改UI配置
+# --------------------------------------
+
+# 首页3D卡片效果
+three_dimension_card: true
+
+# 玻璃拟态
+glassmorphism: true
+
+# 鼠标特效
+mouse_effect:
+  enable: true
+  type: fireworks  # fireworks/click/heart
+
+# 动态背景
+background_effect:
+  enable: true
+  type: stars  # stars/particles/waves
+  dark_mode_type: ribbons
+
+# 字体设置
+font:
+  global_font: 'LXGW WenKai, HarmonyOS Sans, -apple-system, sans-serif'
+  code_font: 'JetBrains Mono, Fira Code, monospace'
+  preload: true
+
+# --------------------------------------
+# 加载优化 (PJAX + Service Worker)
+# --------------------------------------
+pjax:
+  enable: true
+  timeout: 5000
+
+service_worker:
+  enable: true
+  cache_name: 'Cimen101-Blog-v1'
+  cache_list:
+    - '/'
+    - '/css/'
+    - '/js/'
+    - '/img/'
+
+# 图片懒加载
+lazyload:
+  enable: true
+  field: site
+
+# 预加载
+preload:
+  enable: true
+  instantpage: true
+
+# --------------------------------------
+# Waline 评论系统
+# --------------------------------------
+comments:
+  # Use Waline (推荐: 部署在Vercel + LeanCloud)
+  waline:
+    enable: true
+    serverURL: https://waline.cimen101.com
+    lang: zh-CN
+    pageSize: 10
+    wordLimit: 1000
+    meta: nick,mail,link
+    requiredMeta: nick,mail
+    avatar: monsterid
+    visitor: true
+    commentCount: true
+    pageview: true
+    reaction: true
+    dark: 'html[data-theme="dark"]'
+    # 表情包
+    emoji:
+      - https://unpkg.com/@waline/emojis@1.1.0/weibo
+      - https://unpkg.com/@waline/emojis@1.1.0/bilibili
+    # 图片上传
+    imageUploader: true
+    search: true
+
+# --------------------------------------
+# 数据分析 (Cloudflare + Umami)
+# --------------------------------------
+analytics:
+  cloudflare: true
+  cloudflare_token: YOUR_CF_ANALYTICS_TOKEN
+  umami:
+    enable: true
+    serverURL: https://umami.cimen101.com
+    siteId: YOUR_UMAMI_SITE_ID
+  baidu: false
+  google: false
+
+# --------------------------------------
+# SEO配置
+# --------------------------------------
+seo:
+  enable: true
+  google_site_verification: "your-google-verification-code"
+  bing_site_verification: "your-bing-verification-code"
+  baidu_site_verification: "your-baidu-verification-code"
+
+sitemap:
+  path: sitemap.xml
+  abbrlink: true
+  extname: .html
+
+# 结构化数据
+structured_data:
+  enable: true
+
+# Open Graph
+open_graph:
+  enable: true
+  twitter_card: summary_large_image
+  image: https://images.cimen101.com/og-default.png
+
+# --------------------------------------
+# 社交分享
+# --------------------------------------
+share:
+  enable: true
+  addtoany: true
+  sharejs:
+    enable: true
+    sites: weibo,wechat,qq,facebook,twitter
+
+# --------------------------------------
+# 特色功能 (碎碎念、相册、音乐)
+# --------------------------------------
+
+# 碎碎念 (Memos)
+memos:
+  enable: true
+  api: https://memos.cimen101.com/api/v1/memo?creatorId=1&limit=10
+  page_size: 10
+
+# 相册
+album:
+  enable: true
+  layout: masonry  # masonry/grid
+  lightbox: fancybox  # fancybox/photoswipe
+
+# 音乐 (APlayer)
+music:
+  enable: true
+  type: meting  # meting/aplayer
+  meting_api: https://meting.cimen101.com/api?server=:server&type=:type&id=:id&r=:r
+  # 默认歌单
+  default_playlist:
+    server: netease
+    type: playlist
+    id: 60198
+  player:
+    fixed: true
+    mini: false
+    autoplay: false
+    theme: '#448aff'
+    loop: 'all'
+    order: 'list'
+    preload: 'auto'
+    volume: 0.7
+
+# 友链
+friends:
+  enable: true
+  layout: list
+  api: https://fcircle.cimen101.com/api/v1/friends
+  version: v2
+
+# 朋友圈
+fcircle:
+  enable: true
+  api: https://fcircle.cimen101.com/api/v1/friends
+
+# --------------------------------------
+# 底部配置
+# --------------------------------------
+footer:
+  enable: true
+  custom_text: '<p>Powered by <a href="https://hexo.io">Hexo</a> + <a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></p><p>Hosted on <a href="https://pages.cloudflare.com">Cloudflare Pages</a></p><div id="runtime"></div>'
+  copyright: false
+  social: true
+  record:
+    enable: true
+    ICP: 京ICP备XXXXXXXX号-1
+  security:
+    enable: true
+    icp:
+    police:
+
+# --------------------------------------
+# Inject配置 (注入自定义JS/CSS)
+# --------------------------------------
+inject:
+  head:
+    # 字体预加载
+    - '<link rel="preconnect" href="https://images.cimen101.com">'
+    - '<link rel="dns-prefetch" href="https://images.cimen101.com">'
+    # Service Worker 注册
+    - '<script>if("serviceWorker"in navigator){navigator.serviceWorker.register("/sw.js")}</script>'
+    # 站点验证
+    - '<meta name="google-site-verification" content="your-google-verification-code">'
+    - '<meta name="baidu-site-verification" content="your-baidu-verification-code">'
+    - '<meta name="msvalidate.01" content="your-bing-verification-code">'
+    # HSTS 头
+    - '<meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">'
+    # 设计系统
+    - '<link rel="stylesheet" href="/css/design-system.css">'
+    # PV 样式
+    - '<link rel="stylesheet" href="/css/pv-style.css">'
+
+  bottom:
+    # 鼠标烟花特效
+    - '<script src="https://cdn.cimen101.com/effects/fireworks.js"></script>'
+    # 3D卡片
+    - '<script src="https://cdn.cimen101.com/effects/tilt.js"></script>'
+    # 动态背景 (Vanta.js)
+    - '<script src="https://cdn.cimen101.com/effects/vanta.stars.min.js"></script>'
+    - '<script>VANTA.STARS({el:"#page-header",mouseControls:true,touchControls:true,gyroControls:false,minHeight:200,minWidth:200,scale:1.00,scaleMobile:1.00,backgroundColor:0x000000,color:0x448aff})</script>'
+    # 自定义脚本
+    - '<script src="/js/custom.js"></script>'
+
+# --------------------------------------
+# CDN配置 (全部使用自建CDN)
+# --------------------------------------
+CDN:
+  enable: true
+  base: https://cdn.cimen101.com
+  version: 1.0.0
+  # 不走CDN的本地资源
+  exclude:
+    - '/*.min.js'
+  js:
+    main: /js/main.js
+    utils: /js/utils.js
+    pjax: /js/pjax.js
+  css:
+    main: /css/main.css
+    utilities: /css/utilities.css
+
+# --------------------------------------
+# 主题色配置
+# --------------------------------------
+theme_color:
+  primary: '#448aff'
+  secondary: '#536dfe'
+  accent: '#ff4081'
+  background: '#ffffff'
+  text: '#37474f'
+
+# 暗色模式
+dark_mode:
+  enable: true
+  default: light
+  auto: true
+  button: true
+
+# --------------------------------------
+# 移动端优化
+# --------------------------------------
+mobile:
+  enable: true
+  layout: mobile
+  zoom: false
+
+# --------------------------------------
+# 性能监控
+# --------------------------------------
+performance:
+  enable: true
+  lighthouse: true
