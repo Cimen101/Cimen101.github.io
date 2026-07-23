@@ -1,0 +1,38 @@
+/* Cimen101 Blog - Custom Styles */
+:root {
+  --primary-color: #448aff;
+  --secondary-color: #536dfe;
+  --accent-color: #ff4081;
+}
+
+#site-title {
+  background: linear-gradient(135deg, #448aff 0%, #536dfe 50%, #ff4081 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700 !important;
+}
+
+.recent-post-item {
+  transition: all 0.3s ease;
+  border-radius: 12px !important;
+}
+
+.recent-post-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #448aff, #536dfe);
+  border-radius: 4px;
+}
