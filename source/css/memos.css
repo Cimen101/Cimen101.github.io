@@ -1,0 +1,74 @@
+/* Memos 短文样式 */
+.memos-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.memos-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.memos-header h2 {
+  font-size: 2em;
+  background: linear-gradient(135deg, #448aff, #ff4081);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.memos-filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--primary-color, #448aff);
+  background: transparent;
+  color: var(--primary-color, #448aff);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--primary-color, #448aff);
+  color: white;
+}
+
+.memo-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  border-left: 3px solid var(--primary-color, #448aff);
+  transition: all 0.3s;
+}
+
+.memo-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
+}
+
+.memo-content {
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.memo-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85em;
+  opacity: 0.7;
+}
+
+.memo-tag {
+  margin-right: 8px;
+  color: var(--primary-color, #448aff);
+}
