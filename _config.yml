@@ -1,4 +1,4 @@
-# Hexo Configuration - 进阶版多平台部署
+# Hexo Configuration - Cimen101 Blog
 # Site
 title: Cimen101 Blog
 subtitle: 记录 · 分享 · 创造
@@ -8,13 +8,12 @@ author: Cimen101
 language: zh-CN
 timezone: Asia/Shanghai
 
-# 多平台URL配置
-url: https://cimen101-blog.pages.dev
+# 主站 - Cloudflare Pages (cimen.online)
+url: https://blog.cimen.online
 root: /
 
 # 永久链接
 permalink: :year/:month/:day/:abbrlink/
-permalink_defaults:
 pretty_urls:
   trailing_index: true
   trailing_html: true
@@ -25,7 +24,6 @@ public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
-code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
 
@@ -61,7 +59,6 @@ category_map:
   life: 生活
   thoughts: 思考
   blog: 博客开发
-tag_map:
 
 # 日期格式
 date_format: YYYY-MM-DD
@@ -71,13 +68,6 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 theme: butterfly
-
-# 部署 (支持多平台)
-deploy:
-  - type: git
-    repo: https://github.com/Cimen101/Cimen101.github.io.git
-    branch: gh-pages
-    message: 'Site updated: {{ now("YYYY-MM-DD HH:mm:ss") }}'
 
 # 包含文件
 include:
